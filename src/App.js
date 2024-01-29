@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {Route, Switch, Redirect} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 
 import Login from './components/Login'
 import Home from './components/Home'
@@ -19,8 +19,7 @@ class App extends Component {
         <ProtectedRoute exact path="/" component={Home} />
         <ProtectedRoute exact path="/jobs" component={Jobs} />
         <ProtectedRoute exact path="/jobs/:id" component={JobItemDetails} />
-        <Route path="/not-found" component={NotFound} />
-        <Redirect to="not-found" />
+        <Route component={NotFound} />
       </Switch>
     )
   }
